@@ -1,5 +1,5 @@
 public interface SortIF {
-    String[][] dependencies();
+    void readDependencies( String[][] dependencies);
 
     boolean isWellSorted( String[] sequence );
 }
