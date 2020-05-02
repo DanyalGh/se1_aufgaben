@@ -12,9 +12,9 @@ class SortIFTest {
 
     @BeforeEach
     void setUp(){
-        dependencies = new String[][]{{"A", "B"}};
-        sequence1 = new String[]{"A","B"};
-        sequence2 = new String[]{"B","A"};
+        dependencies = new String[][]{{"A", "C"}, {"C", "D"},  {"B", "C"}};
+        sequence1 = new String[]{"A","B","C","D"};
+        sequence2 = new String[]{"D","C","B","A"};
     }
 
     @Test
