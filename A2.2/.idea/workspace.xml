@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5207d61a-33d9-477b-beb7-22194ee3b927" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,9 +52,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.23084886" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -78,19 +80,22 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="643" y="341" key="#Project_Structure" timestamp="1588426463090">
-      <screen x="0" y="0" width="2560" height="1410" />
+    <state x="99" y="0" width="1151" height="680" key="#Project_Structure" timestamp="1588428918810">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="99" y="0" width="1151" height="680" key="#Project_Structure/0.0.1280.680@0.0.1280.680" timestamp="1588428918810" />
     <state x="643" y="341" key="#Project_Structure/0.0.2560.1410/2560.0.1680.1020@0.0.2560.1410" timestamp="1588426463090" />
     <state x="869" y="508" key="FileChooserDialogImpl" timestamp="1588426441604">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="869" y="508" key="FileChooserDialogImpl/0.0.2560.1410/2560.0.1680.1020@0.0.2560.1410" timestamp="1588426441604" />
-    <state x="867" y="658" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1588426461714">
-      <screen x="0" y="0" width="2560" height="1410" />
+    <state x="434" y="317" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1588428491863">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="434" y="317" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1280.680@0.0.1280.680" timestamp="1588428491863" />
     <state x="867" y="658" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.2560.1410/2560.0.1680.1020@0.0.2560.1410" timestamp="1588426461714" />
   </component>
 </project>
