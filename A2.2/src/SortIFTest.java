@@ -11,6 +11,8 @@ class SortIFTest {
     String[][] dependencies1;
     String[][] dependencies2;
     String[][] dependencies3;
+    String[][] dependencies4;
+    String[][] dependencies5;
     String[] sequence0;
     String[] sequence1;
     String[] sequence2;
@@ -18,12 +20,21 @@ class SortIFTest {
     String[] sequence4;
     String[] sequence5;
     String[] sequence6;
+    String[] sequence7;
+    String[] sequence8;
+    String[] sequence9;
+    String[] sequence10;
+    String[] sequence11;
+    String[] sequence12;
     Sort sort = new Sort();
 
     @BeforeEach
      void setUp(){
         dependencies1 = new String[][]{{"A", "B"}};
         dependencies2 = new String[][]{{"A", "B"}, {"C", "D"}};
+        dependencies3 = new String[][]{{"A", "B"},{"B","C"}};
+        dependencies4 = new String[][]{{"A", "B"},{"B","C"},{"D","C"},{"E","C"}};
+        dependencies5 = new String[][]{{"A", "B"},{"B","C"},{"D","C"},{"E","C"},{"A","D"},{"A","E"},{"D","E"}};
         sequence0 = new String[]{};
         sequence1 = new String[]{"A","B"};
         sequence2 = new String[]{"B","A"};
@@ -31,6 +42,12 @@ class SortIFTest {
         sequence4 = new String[]{"A","C","B","D"};
         sequence5 = new String[]{"A","B","D","C"};
         sequence6 = new String[]{"A","D","B","C"};
+        sequence7 = new String[]{"C","A"};
+        sequence8 = new String[]{"A","B","D","E","C"};
+        sequence9 = new String[]{"A","D","E","B","C"};
+        sequence10 = new String[]{"A","B","C","D","E"};
+        sequence11 = new String[]{"A","B","D","E","C"};
+        sequence12 = new String[]{"A","B","E","D","C"};
     }
 
     @Test
@@ -63,6 +80,37 @@ class SortIFTest {
         assertTrue(result2);
         assertFalse(result3);
         assertFalse(result4);
+    }
+
+    @Test
+    @DisplayName("Einfacher Test für transitive Abhängigkeiten")
+    void test4_isWellSorted(){
+        sort.readDependencies(dependencies3);
+        boolean result1 = sort.isWellSorted(sequence7);
+        assertFalse(result1,"C ist nicht erlaubt, da B zuerst kommt. A muss also vorher gemacht werden");
+    }
+
+    @Test
+    @DisplayName("Weiterer Test für transitive Abhängigkeiten")
+    void test5_isWellSorted(){
+        sort.readDependencies(dependencies4);
+        boolean result1 = sort.isWellSorted(sequence8);
+        boolean result2 = sort.isWellSorted(sequence9);
+        boolean result3 = sort.isWellSorted(sequence10);
+        assertTrue(result1,"Diese Sequenz ist korrekt");
+        assertTrue(result2,"Diese Sequenz ist korrekt");
+        assertFalse(result3,"Nach transitivität muss D und E vor C passieren, daher false!");
+    }
+
+    @Test
+    @DisplayName("Weiterer Test für transitive Abhängigkeiten")
+    void test6_isWellSorted(){
+        sort.readDependencies(dependencies4);
+        boolean result1 = sort.isWellSorted(sequence11);
+        boolean result2 = sort.isWellSorted(sequence12);
+        assertTrue(result1,"Diese Sequenz ist korrekt");
+        assertFalse(result2,"Diese Sequenz muss falsch sein wegen Transitivität von D und E");
+
     }
 
 
