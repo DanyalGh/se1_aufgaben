@@ -9,6 +9,10 @@ public class Sort implements SortIF {
 
     @Override
     public boolean isWellSorted(String[] sequence) {
+        if(sequence.length <= 0){
+            throw new IndexOutOfBoundsException();
+        }
+
         int i = 0;
         for (String task : sequence) {
             for (String[] dependency : dependencies) {
