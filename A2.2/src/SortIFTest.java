@@ -105,12 +105,11 @@ class SortIFTest {
     @Test
     @DisplayName("Weiterer Test für transitive Abhängigkeiten")
     void test6_isWellSorted(){
-        sort.readDependencies(dependencies4);
+        sort.readDependencies(dependencies5);
         boolean result1 = sort.isWellSorted(sequence11);
         boolean result2 = sort.isWellSorted(sequence12);
         assertTrue(result1,"Diese Sequenz ist korrekt");
         assertFalse(result2,"Diese Sequenz muss falsch sein wegen Transitivität von D und E");
-
     }
 
 
