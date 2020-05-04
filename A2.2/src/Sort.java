@@ -35,7 +35,6 @@ public class Sort implements SortIF {
 
 
         int i = 0;
-
         for (String task : sequence) {
             for (String[] dependency : dependencies) {
                 if (dependency[1].equals(task)) {
@@ -44,13 +43,24 @@ public class Sort implements SortIF {
                             return false;
                         }//end if
                     }// end for
-                    for (String[] transitive: dependencies) {
+
+                    boolean transitivityFailure = true;               // When checking a specific task we first assume that transitivity is not given.
+                    for (int j = 0; j < i; j++) {
+                        if (dependency[0].equals(sequence[j])) {
+                            transitivityFailure = false;              // For the selected task, we have to find a proof, that transitivity works
+                        }//end if
+                    }// end for
+
+                    if(transitivityFailure){                          //Only if transitivity was not detected for the current task, it will fail completely
+                        return false;
+                        }
+                   /* for (String[] transitive: dependencies) {
                         for (String task_ : sequence){
                             if (transitive[1].equals(dependency[0]) && transitive[0].equals(task_) && !Arrays.asList(sequence).contains(dependency[0])){
                                 return false;
                             }//end if
                         }//end for
-                    }//end for
+                    }//end for*/
                 }// end if
             }//end for
             i++;

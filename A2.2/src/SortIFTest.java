@@ -13,6 +13,7 @@ class SortIFTest {
     String[][] dependencies3;
     String[][] dependencies4;
     String[][] dependencies5;
+    String[][] dependencies6;
     String[] sequence0;
     String[] sequence1;
     String[] sequence2;
@@ -26,6 +27,7 @@ class SortIFTest {
     String[] sequence10;
     String[] sequence11;
     String[] sequence12;
+    String[] sequence13;
     Sort sort = new Sort();
 
     @BeforeEach
@@ -35,6 +37,7 @@ class SortIFTest {
         dependencies3 = new String[][]{{"A", "B"},{"B","C"}};
         dependencies4 = new String[][]{{"A", "B"},{"B","C"},{"D","C"},{"E","C"}};
         dependencies5 = new String[][]{{"A", "B"},{"B","C"},{"D","C"},{"E","C"},{"A","D"},{"A","E"},{"D","E"}};
+        dependencies6 = new String[][]{{ "A" , "C"}, { "C", "D"}, { "B", "C"}};
         sequence0 = new String[]{};
         sequence1 = new String[]{"A","B"};
         sequence2 = new String[]{"B","A"};
@@ -48,6 +51,7 @@ class SortIFTest {
         sequence10 = new String[]{"A","B","C","D","E"};
         sequence11 = new String[]{"A","B","D","E","C"};
         sequence12 = new String[]{"A","B","E","D","C"};
+        sequence13 = new String[]{"C","D"};
     }
 
     @Test
@@ -110,6 +114,15 @@ class SortIFTest {
         boolean result2 = sort.isWellSorted(sequence12);
         assertTrue(result1,"Diese Sequenz ist korrekt");
         assertFalse(result2,"Diese Sequenz muss falsch sein wegen Transitivität von D und E");
+    }
+
+    @Test
+    @DisplayName("Weiterer Test für transitive Abhängigkeiten")
+    void test7_isWellSorted(){
+        sort.readDependencies(dependencies6);
+        boolean result1 = sort.isWellSorted(sequence13);
+
+        assertFalse(result1,"Diese Sequenz soll falsch sein");
     }
 
 
