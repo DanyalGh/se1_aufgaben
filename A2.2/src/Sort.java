@@ -16,24 +16,6 @@ public class Sort implements SortIF {
             throw new IndexOutOfBoundsException();
         }
 
-        /*
-        int i = 0;
-            for (String task : sequence) {
-                for (String[] dependency : dependencies) {
-                    if (dependency[1].equals(task)) {
-                        for (int j = i; j < sequence.length; j++) {
-                            if (dependency[0].equals(sequence[j])) {
-                                return false;
-                            }//end if
-                        }// end for
-                    }// end if
-                }//end for
-                i++;
-            }//end for
-        return true;
-*/
-
-
         int i = 0;
         for (String task : sequence) {
             for (String[] dependency : dependencies) {
@@ -50,17 +32,9 @@ public class Sort implements SortIF {
                             transitivityFailure = false;              // For the selected task, we have to find a proof, that transitivity works
                         }//end if
                     }// end for
-
                     if(transitivityFailure){                          //Only if transitivity was not detected for the current task, it will fail completely
                         return false;
                         }
-                   /* for (String[] transitive: dependencies) {
-                        for (String task_ : sequence){
-                            if (transitive[1].equals(dependency[0]) && transitive[0].equals(task_) && !Arrays.asList(sequence).contains(dependency[0])){
-                                return false;
-                            }//end if
-                        }//end for
-                    }//end for*/
                 }// end if
             }//end for
             i++;
