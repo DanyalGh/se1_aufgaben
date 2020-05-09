@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="SE1_Parkhaus:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/SE1_Parkhaus_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="SE1_Parkhaus/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="SE1_Parkhaus" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
