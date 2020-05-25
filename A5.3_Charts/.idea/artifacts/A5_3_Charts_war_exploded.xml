@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="A5.3_Charts:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/A5_3_Charts_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="A5.3_Charts/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="A5.3_Charts" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="javax.json.processing-1.1.4" />
+          <element id="library" level="project" name="org.glassfish:javax.json:1.1.4" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
