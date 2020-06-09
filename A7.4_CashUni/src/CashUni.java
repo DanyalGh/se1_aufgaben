@@ -9,35 +9,14 @@ public class CashUni {
     }
 
     public int sumKurse() {
-        int tmp = 0;
-
-        for (Kurs kurs : kurse) {
-            tmp += kurs.gebuehr;
-        }
-
-        return tmp;
+        return kurse.stream().map(k -> k.gebuehr).reduce(0, (a, b) -> a + b);
     }
 
     public int sumStudenten() {
-        int tmp = 0;
-
-        for (Student student : studenten.stream().filter(s -> s.istBerufstaetig).toArray(Student[]::new)){
-            for (Kurs kurs : student.kurse) {
-                tmp += kurs.gebuehr;
-            }
-        }
-
-        return tmp;
+        return studenten.stream().filter(s -> s.istBerufstaetig).map(s -> s.kurse).map(k -> k.stream().map(l -> l.gebuehr).reduce(0, (a, b) -> a + b)).reduce(0, (a, b) -> a + b);
     }
 
     public double avg() {
-        int tmp = 0, i = 0;
-
-        for (Kurs kurs : kurse.stream().filter(k -> k.ECTS > 5).toArray(Kurs[]::new)) {
-            tmp += kurs.gebuehr;
-            i++;
-        }
-
-        return tmp / i;
+        return kurse.stream().filter(k -> k.ECTS > 5).map(l -> l.gebuehr).reduce(0, (a, b) -> a + b) / kurse.stream().filter(k -> k.ECTS > 5).toArray().length;
     }
 }
